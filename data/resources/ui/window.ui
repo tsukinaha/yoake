@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="YoakeWindow" parent="AdwApplicationWindow">
+    <property name="title">Yoake</property>
+    <property name="width-request">500</property>
+    <property name="height-request">350</property>
+    <property name="content">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar"/>
+        </child>
+        <property name="content">
+          <object class="AdwClamp">
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">20</property>
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title" translatable="yes">General</property>
+                    <child>
+                      <object class="AdwSwitchRow" id="layer_switch">
+                        <property name="title" translatable="yes">Start</property>
+                        <signal name="notify::active" handler="on_layer_switch_notify" swapped="yes"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title" translatable="yes">Margin</property>
+                    <child>
+                      <object class="AdwSpinRow" id="margin_bottom_spinrow">
+                        <property name="title" translatable="yes">Bottom</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">1920</property>
+                            <property name="value">0</property>
+                            <property name="page-increment">1</property>
+                            <property name="step-increment">1</property>
+                            <signal name="value-changed" handler="on_margin_bottom_value_changed" swapped="yes"/>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

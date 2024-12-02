@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="YoakeLayer" parent="AdwApplicationWindow">
+    <property name="title">Yoake</property>
+    <property name="width-request">500</property>
+    <property name="height-request">350</property>
+    <property name="content">
+      <object class="GtkBox" id="layer_box">
+        <property name="halign">center</property>
+        <property name="valign">center</property>
+        <property name="spacing">20</property>
+        <property name="orientation">horizontal</property>
+      </object>
+    </property>
+    <style>
+      <class name="transparent" />
+    </style>
+  </template>
+</interface>
