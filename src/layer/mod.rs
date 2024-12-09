@@ -98,6 +98,7 @@ impl YoakeLayer {
 
     pub fn add_key_button(&self, key: &str) {
         let button = gtk::Button::with_label(key);
+        button.add_css_class("key-button");
         let revealer = gtk::Revealer::builder()
             .transition_type(gtk::RevealerTransitionType::SlideLeft)
             .child(&button)
